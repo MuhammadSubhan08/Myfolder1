@@ -1,0 +1,627 @@
+installation
+
+git windows install
+
+git bash here terminal is unix based terminal (like linux and unix Operating System)
+
+//when you first time use git then should have to set your name and email address (to identify the user)
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git
+**1)  $ git config  --global user.name Ahsan
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git
+**2) $ git config --global user.email ar9642253@gmail.com
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git
+$ git config --global user.name
+Ahsan
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git
+$ git config --global user.email
+ar9642253@gmail.com
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git
+
+**3) $ code .                      (command for oppening visual studio IDE in a Specific Folder)
+ 
+///There are two things in Git 
+1.Cloning :     if u want to get data/Repository from server
+2.Initialize :   means you just start 
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git
+**4) $ git init                                      //to initialize empty git repository
+Initialized empty Git repository in C:/Users/dell/Desktop/git/.git/
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**5) $ ls -lart                               //command to show Empty Folders*(hidden Files)
+total 44
+drwxr-xr-x 1 dell 197121 0 Jul 29 14:20 ../
+drwxr-xr-x 1 dell 197121 0 Jul 29 15:09 ./
+drwxr-xr-x 1 dell 197121 0 Jul 29 15:09 .git/   //to save data of all files in this folder
+
+               
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**6) $ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**7)$ git add index.html          //command to add file in a staging area 
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+                       **//to track the information of our project files we must (type commit command first time)
+                        //commit to take snapshot of file for keeping record of the File
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**8) $ git commit     
+
+ *// type i to insert message(associate message) for change decription then press "esc" type colon ":wq" and hit enter
+
+[master (root-commit) 7e9b6d3] initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**9) $ touch about.html        **//touch is command to create blank file
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ touch contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ touch monument.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        about.html
+        contact.html
+        monument.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**10)$ git add -A        **//command to commit all files without adding them individually
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   contact.html
+        new file:   monument.html
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   contact.html       //Empty File in Staging area
+        new file:   monument.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html      //Modified file in Modified Area
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**11) $ git add -A
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   contact.html
+        new file:   monument.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**12) $ git commit -m "added more html"          //command to commit all files 
+[master a451610] added more html
+ 3 files changed, 11 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 contact.html
+ create mode 100644 monument.html
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+   
+   **change contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git checkout contact.html          //checkout command : make Your file in working Directory to match with last commit
+Updated 1 path from the index
+
+        **//   **change contact.html,about.html,index.html
+ 
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+        modified:   contact.html
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**13) $ git checkout -f          // this command will match all files to last commit
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**14) $ git log                             //git log command : to check all commits
+commit a451610df697e6899872f609986685cf18abb9b6 (HEAD -> master)
+Author: Ahsan <ar9642253@gmail.com>
+Date:   Sat Jul 29 16:03:51 2023 +0500
+
+    added more html
+
+commit 7e9b6d3689202ff2b14e2ee0c6e3d5168acf7cd5
+Author: Ahsan <ar9642253@gmail.com>
+Date:   Sat Jul 29 15:18:44 2023 +0500
+
+    initial commit
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**15) $ git log -p -1                       //git log -p -1: command to filter commits upto defined numbers of commit in command 
+commit a451610df697e6899872f609986685cf18abb9b6 (HEAD -> master)
+Author: Ahsan <ar9642253@gmail.com>
+Date:   Sat Jul 29 16:03:51 2023 +0500
+
+    added more html
+
+diff --git a/about.html b/about.html
+new file mode 100644
+index 0000000..e69de29
+diff --git a/contact.html b/contact.html
+new file mode 100644
+index 0000000..d01f779
+--- /dev/null
++++ b/contact.html
+@@ -0,0 +1,11 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Document</title>
++</head>
++<body>
+                                      ** after git filter command press q to quit**
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+                                    //modify index.html <body Ahsan/>
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+modified : contact.html                  
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**16) $ git diff                          //command to compare your working tree with staging Area
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git add -A
+
+                                            //modify index.html <body Ahsan2/>
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+modified : contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git diff                          //command to compare your working tree with staging Area
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git add -A
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git diff                //nothing to show b/c it compare woring tree with Staging Area
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**17) $git diff --staged                //command to compare your Staging Area with Last Commit
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+**18) $ git checkout -f                     //command to match with last commit    //<body>  
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+                                      //again modified index.html    
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**19) $ git commit -a -m "skipped staging area and fixed <"  **//command to commit files without adding it into staging area
+[master a624ca2] skipped stafing area and fixed <
+ 1 file changed, 11 insertions(+)
+
+
+                               ** //Avoid this command b/c staging area feture is best for developers b/c in staging
+                             feature we individually staging file and commiting them**
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**20) $ git log
+commit a624ca2342c44a7163faa70eec280da41d25f77d (HEAD -> master)
+Author:Ahsan <ar9642253@gmail.com>
+Date:   Sat Jul 29 19:49:54 2023 +0500
+
+    skipped stafing area and fixed <
+
+commit a451610df697e6899872f609986685cf18abb9b6
+Author: Ahsan <ar9642253@gmail.com>
+Date:   Sat Jul 29 16:03:51 2023 +0500
+
+    added more html
+
+commit 7e9b6d3689202ff2b14e2ee0c6e3d5168acf7cd5
+Author: Ahsan <ar9642253@gmail.com>
+Date:   Sat Jul 29 15:18:44 2023 +0500
+
+    initial commit
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git status
+on branch master 
+Nothing to commit
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ ls
+about.html  contact.html  index.html  monument.html
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**21) $ touch waste.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ ls
+about.html  contact.html  index.html  monument.html  waste.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**22)  $ git commit -a -m "adding waste"
+untracked file                  //not adding it into staging area
+  waste.html
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git add -A               //must be add a file into staging area first then u can directly commit your modified files
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git commit -a -m "adding waste"
+[master 74e20bf] adding waste
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 waste.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ ls
+about.html  contact.html  index.html  monument.html  waste.html
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**23) $ git rm  --cached waste.html       ** //remove file only from staged Area not from Directory
+rm 'waste.html'
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ ls
+about.html  contact.html  index.html  monument.html  waste.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git Status
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git add -A                   ** //Adding in staged area waste.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git Status
+
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ ls
+about.html  contact.html  index.html  monument.html  waste.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**24) $ git rm waste.html
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git status
+On branch master
+deleted waste.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ ls
+about.html  contact.html  index.html  monument.html 
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**25) $ git commit -a -m "Removing waste"
+[master 74e20bf] adding waste
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 waste.html
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**26) $ git log -p -2
+commit 0555db55db546995974b5bb0942256bebdc64c78 (HEAD -> master)
+Author: Ahsan <ar9642253@gmail.com>
+Date:   Sat Jul 29 19:58:08 2023 +0500
+
+    removing waste
+
+diff --git a/waste.html b/waste.html
+deleted file mode 100644
+index e69de29..0000000
+
+commit 74e20bf25d38cc8fd11b638c78747cc70eaeb34b
+Author: Ahsan <ar9642253@gmail.com>
+Date:   Sat Jul 29 19:52:56 2023 +0500
+
+    adding waste
+
+diff --git a/waste.html b/waste.html
+new file mode 100644
+index 0000000..e69de29
+
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+                               **//modify about and index.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**27) $ git status -s              **// command for Short Status
+  M about.html          //Files are modified in working tree
+  M contact.html        //Files are modified in Staging area
+  M index.html
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**28) $ git add contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**29) $ git status -s
+ M about.html          //Files are modified in working tree .. 2nd box denote working tree
+M  contact.html        //Files are modified in Staging area .. first box Denote staging area
+ M index.html
+                     **//now change modify contact.html and save it then enter below command
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**30) $ git status -s
+ M about.html
+MM contact.html                                                                                                        //
+ M index.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git add contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git status -s
+ M about.html
+M  contact.html
+ M index.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git status
+                  ////// branch master is main branch
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**31) $ git branch feature1
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**32) $ git branch
+  feature1
+* master
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**33)$ git checkout feature1
+Switched to branch 'feature1'
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+$ git status
+On branch feature1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+       
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+$ git add -A
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+$ git status
+On branch feature1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+**34) $ git commit -m "fixed extra bracket"
+[feature1 b57ca54] fixed extra bracket
+ 3 files changed, 2 insertions(+)
+ delete mode 100644 log/mylogs.log
+ delete mode 100644 mylogs.log
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+$ git status
+On branch feature1
+nothing to commit, working tree clean
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+$ git checkout master
+Switched to branch 'master'
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git checkout feature1
+Switched to branch 'feature1'
+M       contact.html
+
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git checkout master
+Already on 'master'
+M       contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git checkout feature1
+Switched to branch 'feature1'
+M       contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+$ git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+$ git checkout feature1
+Already on 'feature1'
+M       contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (feature1)
+$ git checkout master
+Switched to branch 'master'
+M       contact.html
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+**35) $ git checkout -b flaskintegration        //command to create branch and log in to new created branch
+Switched to a new branch 'flaskintegration'
+
+//create new file in flaskintegration in vs code then add using "git add -A" "git commit -m "Added Flask" git status
+
+///create repo on github to host your project //live you project
+
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git remote -v
+origin  git@github.com:ar9642253/gittutorial.git (fetch)
+origin  git@github.com:ar9642253/gittutorial.git (push)
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git push -u origin master
+The authenticity of host 'github.com (20.207.73.82)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enumerating objects: 17, done.
+Counting objects: 100% (17/17), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (17/17), 1.57 KiB | 200.00 KiB/s, done.
+Total 17 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+To github.com:hafsafatima259/gittutorial.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+$ git clone https://github.com/pallets/flask.git
+Cloning into 'flask'...
+remote: Enumerating objects: 24091, done.
+remote: Counting objects: 100% (703/703), done.
+remote: Compressing objects: 100% (287/287), done.
+remote: Total 24091 (delta 389), reused 636 (delta 387), pack-reused 23388
+Receiving objects: 100% (24091/24091), 9.99 MiB | 412.00 KiB/s, done.
+Resolving deltas: 100% (16164/16164), done.
+
+dell@DESKTOP-TGL1SGL MINGW32 ~/Desktop/prime 2.o/sems2/DISTRIBUTED VERSION CONTROL/git (master)
+
+
